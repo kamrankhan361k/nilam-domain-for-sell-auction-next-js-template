@@ -1,0 +1,12 @@
+{
+  "env": {
+    "USER_EMAIL": "YOUREMAIL_ADDRESS",
+    "APP_PASSWORD": "YOUR_APP_PASSWORD"
+  },
+  "build": {
+    "env": {
+      "USER_EMAIL": "YOUREMAIL_ADDRESS",
+      "APP_PASSWORD": "YOUR_APP_PASSWORD"
+    }
+  }
+}

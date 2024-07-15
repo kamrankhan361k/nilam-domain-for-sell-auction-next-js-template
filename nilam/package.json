@@ -1,0 +1,52 @@
+{
+  "name": "nilam",
+  "version": "1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "clean": "yarn workspaces run rimraf \"{.next,dist,build,node_modules}\" && rimraf node_modules",
+    "dev:v-01": "yarn workspace @nilam/01 dev",
+    "dev:v-02": "yarn workspace @nilam/02 dev",
+    "dev:v-03": "yarn workspace @nilam/03 dev",
+    "dev:v-04": "yarn workspace @nilam/04 dev",
+    "dev:v-05": "yarn workspace @nilam/05 dev",
+    "dev:v-06": "yarn workspace @nilam/06 dev",
+    "build:v-01": "yarn workspace @nilam/01 build",
+    "build:v-02": "yarn workspace @nilam/02 build",
+    "build:v-03": "yarn workspace @nilam/03 build",
+    "build:v-04": "yarn workspace @nilam/04 build",
+    "build:v-05": "yarn workspace @nilam/05 build",
+    "build:v-06": "yarn workspace @nilam/06 build",
+    "serve:v-01": "yarn workspace @nilam/01 start",
+    "serve:v-02": "yarn workspace @nilam/02 start",
+    "serve:v-03": "yarn workspace @nilam/03 start",
+    "serve:v-04": "yarn workspace @nilam/04 start",
+    "serve:v-05": "yarn workspace @nilam/05 start",
+    "serve:v-06": "yarn workspace @nilam/06 start",
+    "deploy-vercel:v-01": "cd packages/v-01 && vercel --prod",
+    "deploy-vercel:v-02": "cd packages/v-02 && vercel --prod",
+    "deploy-vercel:v-03": "cd packages/v-03 && vercel --prod",
+    "deploy-vercel:v-04": "cd packages/v-04 && vercel --prod",
+    "deploy-vercel:v-05": "cd packages/v-05 && vercel --prod",
+    "deploy-vercel:v-06": "cd packages/v-06 && vercel --prod"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,jsx,md,css}": [
+      "prettier --trailing-comma es5 --single-quote --write"
+    ]
+  }
+}
